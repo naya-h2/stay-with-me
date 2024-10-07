@@ -1,27 +1,61 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f6f8;
+  --main-mint: #00c7be;
+  --logo-green: #1b7156;
+  --Labels-Secondary: rgba(60, 60, 67, 0.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: white;
+  font-family: 'Pretendard Variable', 'Pretendard', '-apple-system', BlinkMacSystemFont, system-ui, sans-serif;
 }
 
 body {
-  color: var(--foreground);
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: 0 auto;
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  button {
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+
+    background-color: white;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 136.4%; /* 30.008px */
+    letter-spacing: -0.427px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 140%; /* 28px */
+    letter-spacing: -0.24px;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .primary-button {
+    font-weight: 600;
+    color: white;
+    background-color: var(--main-mint);
   }
 }
