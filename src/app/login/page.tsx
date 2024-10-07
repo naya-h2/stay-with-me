@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 function LoginPage() {
   return (
-    <div className="px-[52px] h-full py-[120px]">
+    <div className="px-7 h-full py-[120px]">
       <div className="text-center mb-[142px]">
         <h2>1인가구 맞춤형 주거 구독,</h2>
         <h1 className="text-logo-green">스테이위드미</h1>
