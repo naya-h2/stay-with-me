@@ -25,7 +25,7 @@ function HomeCard({ id, nickname, address }: Props) {
   ];
 
   return (
-    <div className="relative w-[288px] h-[200px] flex flex-col justify-between flex-shrink rounded-[16px] border border-Line-Normal-Normal bg-white/75 pt-5 pl-4 pb-4">
+    <div className="relative w-[288px] h-[200px] flex flex-col justify-between flex-shrink rounded-[16px] border border-Line-Normal-Normal bg-main-white/75 pt-5 pl-4 pb-4">
       <div className="w-full flex gap-4">
         <HomeIcon />
         <div>
@@ -41,7 +41,7 @@ function HomeCard({ id, nickname, address }: Props) {
       <div className="flex gap-2 flex-nowrap overflow-x-scroll scroll-hidden">
         {BTN_LIST.map(({ icon, href, label }) => (
           <Fragment key={label}>
-            <Link href={href} className="z-10 flex gap-[6px] text-16 font-medium items-center px-4 py-2 text-nowrap">
+            <Link href={href} className="bg-background rounded-[40px] flex gap-[6px] text-16 font-medium items-center px-4 py-2 text-nowrap">
               <>{icon}</>
               {label}
             </Link>

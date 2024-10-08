@@ -46,7 +46,7 @@ function BottomNav() {
   ];
 
   return (
-    <nav className="h-[104px] px-3 py-6 bg-white absolute bottom-0 left-0 right-0 flex justify-center shadow-bottomnav">
+    <nav className="fixed_center h-[104px] w-full max-w-[480px] z-10 px-3 py-6 bg-main-white bottom-0 flex justify-center shadow-bottomnav">
       <div className="flex gap-6">
         {NAV_LIST.map(({ href, icon, label, id }) => (
           <button

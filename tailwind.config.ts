@@ -16,6 +16,7 @@ const config: Config = {
         mint: 'var(--main-mint)',
         gray: 'var(--main-gray)',
         red: 'var(--main-red)',
+        white: '#FFFFFF',
       },
       logo: {
         green: 'var(--logo-green)',

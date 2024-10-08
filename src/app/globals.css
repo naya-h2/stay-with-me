@@ -95,4 +95,18 @@ body {
       display: none;
     }
   }
+
+  .myhome_card_box {
+    width: 288px;
+    height: 200px;
+    border-radius: 16px;
+    border: 1px solid var(--Line-Normal-Normal);
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .fixed_center {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }

@@ -1,3 +1,6 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import ScrapIcon from '~/icon/post-bookmark.svg';
 import HeartIcon from '~/icon/post-favorite.svg';
 
@@ -23,8 +26,12 @@ interface Props {
  * @param isHeart 현재 로그인 유저가 하트를 누른 게시글인지
  */
 function PostCard({ title, id, content, category, created_at, nickname, scrap, heart, isHeart, isScrap, crew }: Props) {
+  const navigate = useRouter();
+
   return (
-    <div className="w-full flex flex-col gap-3 bg-white p-4">
+    <div onClick={() => navigate.push(`/community/post/${id}`)} className="cursor-pointer w-full flex flex-col gap-3 bg-main-white p-4 rounded-lg">
+      {crew && <p className="text-14 font-semibold text-main-mint">{crew}</p>}
+
       <div>
         <h4 className="font-semibold">{title}</h4>
         <p className="min-w-full text-nowrap truncate text-14">{content}</p>
