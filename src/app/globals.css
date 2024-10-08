@@ -10,6 +10,7 @@
   --logo-green: #1b7156;
   --Labels-Secondary: rgba(60, 60, 67, 0.6);
   --Line-Normal-Normal: rgba(112, 115, 124, 0.22);
+  --main-gray: #7a7a7a;
 }
 
 html {
@@ -18,6 +19,7 @@ html {
 }
 
 body {
+  position: relative;
   padding: 0 24px;
   max-width: 480px;
   min-height: 100dvh;
