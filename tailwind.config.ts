@@ -26,6 +26,11 @@ const config: Config = {
         Labels: {
           Secondary: 'var(--Labels-Secondary)',
         },
+        Line: {
+          Normal: {
+            Normal: 'var(--Line-Normal-Normal)',
+          },
+        },
       },
     },
   },
