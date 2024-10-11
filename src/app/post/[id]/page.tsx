@@ -1,3 +1,4 @@
+import BottomChat from '@/components/BottomChat';
 import HeaderLayout from '@/components/Layout/HeaderLayout';
 import dayjs from 'dayjs';
 import ScrapIcon from '~/icon/post-bookmark.svg';
@@ -90,6 +91,9 @@ function PostPage() {
             ))
           : '댓글이 존재하지 않습니다.'}
       </div>
+
+      <BottomChat />
+      <div className="mt-[136px]" />
     </HeaderLayout>
   );
 }
