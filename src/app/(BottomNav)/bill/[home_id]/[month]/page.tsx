@@ -10,6 +10,8 @@ const BILL_DATA = [
   { month: 6, cost: 825000, no: 0, yes: 4 },
 ];
 
+const TAB_LIST = ['전체', '월 임대료', '전기, 수도, 가스요금', '인터넷', '주차비'];
+
 function BillPage({ params: { home_id, month } }: { params: { home_id: string; month: string } }) {
   return (
     <HeaderLayout>
@@ -31,7 +33,7 @@ function BillPage({ params: { home_id, month } }: { params: { home_id: string; m
         </div>
       </div>
 
-      <Tab />
+      <Tab defaultValue="전체" tabList={TAB_LIST} />
       <p className="text-14 text-main-gray mb-4 mt-7">2024년</p>
       <div>
         {BILL_DATA.map(({ month, cost, no, yes }, idx) => (

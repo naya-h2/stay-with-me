@@ -14,8 +14,10 @@ interface Props {
   scrap: number;
   heart: number;
   crew?: string;
-  isHeart: boolean;
-  isScrap: boolean;
+  isHeart?: boolean;
+  isScrap?: boolean;
+  cardStyle?: string;
+  contentStyle?: string;
 }
 
 /**
@@ -25,16 +27,33 @@ interface Props {
  * @param heart 게시글 하트 개수
  * @param isHeart 현재 로그인 유저가 하트를 누른 게시글인지
  */
-function PostCard({ title, id, content, category, created_at, nickname, scrap, heart, isHeart, isScrap, crew }: Props) {
+function PostCard({
+  title,
+  id,
+  content,
+  category,
+  created_at,
+  nickname,
+  contentStyle,
+  scrap,
+  heart,
+  isHeart = false,
+  isScrap = false,
+  crew,
+  cardStyle,
+}: Props) {
   const navigate = useRouter();
 
   return (
-    <div onClick={() => navigate.push(`/community/post/${id}`)} className="cursor-pointer w-full flex flex-col gap-3 bg-main-white p-4 rounded-lg">
+    <div
+      onClick={() => navigate.push(`/community/post/${id}`)}
+      className={`cursor-pointer w-full flex flex-col gap-3 bg-main-white p-4 rounded-lg ${cardStyle}`}
+    >
       {crew && <p className="text-14 font-semibold text-main-mint">{crew}</p>}
 
       <div>
         <h4 className="font-semibold">{title}</h4>
-        <p className="min-w-full text-nowrap truncate text-14">{content}</p>
+        <p className={`min-w-full text-nowrap truncate text-14 ${contentStyle}`}>{content}</p>
       </div>
 
       <div className="flex justify-between">

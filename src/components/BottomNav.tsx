@@ -40,7 +40,7 @@ function BottomNav() {
       id: 'community',
       label: '커뮤니티',
       icon: <CommunityIcon fill="none" stroke={decideStyle('community')} />,
-      href: '/community',
+      href: '/community/board',
     },
     { id: 'mypage', label: '마이페이지', icon: <MypageIcon fill={decideStyle('mypage')} />, href: '/mypage' },
   ];
