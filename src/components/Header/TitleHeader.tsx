@@ -6,6 +6,7 @@ import BackIcon from '~/icon/arrow_back.svg';
 const HEADER_LIST = [
   { title: '납부', backlink: '/' },
   { title: '마이 홈', backlink: '/' },
+  { title: '글 상세보기', backlink: '/community/board' },
 ];
 
 function TitleHeader() {
@@ -14,6 +15,7 @@ function TitleHeader() {
   const findTitle = () => {
     if (path.startsWith('/bill')) return 0;
     if (path.startsWith('/myhome')) return 1;
+    if (path.startsWith('/post')) return 2;
     return 0;
   };
 

@@ -45,10 +45,7 @@ function PostCard({
   const navigate = useRouter();
 
   return (
-    <div
-      onClick={() => navigate.push(`/community/post/${id}`)}
-      className={`cursor-pointer w-full flex flex-col gap-3 bg-main-white p-4 rounded-lg ${cardStyle}`}
-    >
+    <div onClick={() => navigate.push(`/post/${id}`)} className={`cursor-pointer w-full flex flex-col gap-3 bg-main-white p-4 rounded-lg ${cardStyle}`}>
       {crew && <p className="text-14 font-semibold text-main-mint">{crew}</p>}
 
       <div>
