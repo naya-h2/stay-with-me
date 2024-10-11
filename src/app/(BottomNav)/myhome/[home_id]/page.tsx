@@ -5,7 +5,7 @@ import HomeIcon from '~/icon/myhome.svg';
 import InfoIcon from '~/icon/home-info.svg';
 import RuleIcon from '~/icon/home-checkbook.svg';
 import { useState } from 'react';
-import NoticeCard from '@/components/Card/noticeCard';
+import NoticeCard from '@/components/Card/NoticeCard';
 
 const NOTICE_DATA = [
   {

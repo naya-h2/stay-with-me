@@ -119,4 +119,17 @@ body {
     color: var(--main-gray);
     text-wrap: nowrap;
   }
+
+  .mint_btn {
+    padding: 6px 14px;
+    border-radius: 80px;
+    background: var(--main-mint);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+  }
 }
