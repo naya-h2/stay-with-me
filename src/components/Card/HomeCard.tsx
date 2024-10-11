@@ -18,10 +18,11 @@ interface Props {
  * 메인 페이지 마이홈 리스트에 사용되는 카드 컴포넌트
  */
 function HomeCard({ id, nickname, address }: Props) {
+  const today = new Date();
   const BTN_LIST = [
     { label: '마이 홈', icon: <InfoIcon />, href: `/myhome/${id}` },
     { label: '민원', icon: <NotifyIcon />, href: `/404` },
-    { label: '납부', icon: <BillIcon />, href: `/bill/${id}` },
+    { label: '납부', icon: <BillIcon />, href: `/bill/${id}/${today.getMonth() + 1}` },
   ];
 
   return (

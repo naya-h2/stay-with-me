@@ -9,6 +9,7 @@ const config: Config = {
       16: '1rem',
       18: '1.125rem',
       20: '1.25rem',
+      36: '2.25rem',
     },
     colors: {
       background: 'var(--background)',

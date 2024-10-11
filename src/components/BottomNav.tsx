@@ -18,9 +18,9 @@ function BottomNav() {
   const navigate = useRouter();
 
   const checkCurPath = () => {
-    if (path === '/') return 'home';
+    if (path.startsWith('/mypage')) return 'mypage';
     if (path.startsWith('/community')) return 'community';
-    return 'mypage';
+    return 'home';
   };
 
   const [selected, setSelected] = useState<NavType>(checkCurPath());

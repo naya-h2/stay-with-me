@@ -109,4 +109,13 @@ body {
     left: 50%;
     transform: translate(-50%, 0);
   }
+
+  .tab_default {
+    background: none;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0%;
+    color: var(--main-gray);
+    text-wrap: nowrap;
+  }
 }
