@@ -12,7 +12,10 @@ const config: Config = {
       36: '2.25rem',
     },
     colors: {
-      background: 'var(--background)',
+      background: {
+        DEFAULT: 'var(--background)',
+        secondary: 'var(--background-secondary)',
+      },
       main: {
         mint: 'var(--main-mint)',
         gray: 'var(--main-gray)',

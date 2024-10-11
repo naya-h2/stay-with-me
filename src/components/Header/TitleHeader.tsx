@@ -3,13 +3,17 @@
 import { usePathname } from 'next/navigation';
 import BackIcon from '~/icon/arrow_back.svg';
 
-const HEADER_LIST = [{ title: '납부', backlink: '/' }];
+const HEADER_LIST = [
+  { title: '납부', backlink: '/' },
+  { title: '마이 홈', backlink: '/' },
+];
 
 function TitleHeader() {
   const path = usePathname();
 
   const findTitle = () => {
     if (path.startsWith('/bill')) return 0;
+    if (path.startsWith('/myhome')) return 1;
     return 0;
   };
 
