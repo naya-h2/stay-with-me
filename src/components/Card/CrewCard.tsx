@@ -31,7 +31,7 @@ function CrewCard({ crewId, crewName, type, address, crewNum, limit, isMyCrew = 
         ))}
       </div>
       <button
-        onClick={() => (window.location.href = isMyCrew ? `/community/crew/${crewId}` : `/community/crew/${crewId}/join`)}
+        onClick={() => (window.location.href = isMyCrew ? `/community/crew/${crewId}/board` : `/community/crew/${crewId}/join`)}
         className="primary-button h-[30px] rounded-[4px]"
       >
         {isMyCrew ? '바로가기' : '가입'}

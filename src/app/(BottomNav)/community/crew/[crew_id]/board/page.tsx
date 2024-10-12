@@ -1,7 +1,19 @@
 'use client';
+
 import PostCard from '@/components/Card/PostCard';
+import TitleHeader from '@/components/Header/TitleHeader';
 import { useState } from 'react';
-const CATEGORY_LIST = ['전체', '질문', '꿀팁', '나눔', '자유게시판'];
+
+const CREW_DATA = {
+  id: 1,
+  category: 'sport', //or "hobby" or "study"
+  host: 'nickname',
+  title: '한강 러닝 크루',
+  introduction: 'introduction',
+  address: 'address',
+  status: 'done', //"ing", "soon"
+  clubDetailList: [{}, {}], //바로 아래 response list
+};
 
 const DATA = [
   {
@@ -36,11 +48,16 @@ const DATA = [
   },
 ];
 
-function BoardPage() {
+const CATEGORY_LIST = ['전체', '공지', '질문', '자유게시판'];
+
+function CrewBoardPage() {
   const [selected, setSelected] = useState('전체');
+  const { title } = CREW_DATA;
 
   return (
-    <>
+    <div className="pt-[50px]">
+      <TitleHeader title={title} backlink="/community/crew" />
+
       <div className="flex gap-2 flex-nowrap overflow-x-scroll scroll-hidden my-5">
         {CATEGORY_LIST.map((btn) => (
           <button
@@ -69,8 +86,8 @@ function BoardPage() {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
-export default BoardPage;
+export default CrewBoardPage;

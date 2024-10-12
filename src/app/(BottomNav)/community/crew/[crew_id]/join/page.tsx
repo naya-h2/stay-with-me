@@ -1,5 +1,6 @@
 import HeaderLayout from '@/components/Layout/HeaderLayout';
 import Image from 'next/image';
+import Link from 'next/link';
 import TypeIcon from '~/icon/crew-category.svg';
 import AddrIcon from '~/icon/crew-explore.svg';
 import PersonIcon from '~/icon/crew-group.svg';
@@ -45,7 +46,9 @@ function CrewJoinPage() {
           만들어보세요.
         </p>
       </div>
-      <button className="primary-button fixed bottom-[136px] w-[312px] fixed_center">가입하기</button>
+      <Link href="/404">
+        <button className="primary-button fixed bottom-[136px] w-[312px] fixed_center">가입하기</button>
+      </Link>
     </HeaderLayout>
   );
 }
