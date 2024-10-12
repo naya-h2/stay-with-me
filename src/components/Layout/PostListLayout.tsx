@@ -18,22 +18,24 @@ function PostListLayout({ title, addLink, type, postData }: Props) {
         </Link>
       </div>
       <div className="flex flex-col gap-3">
-        {postData.map(({ id, category, content, created_at, heart, isHeart, isScrap, nickname, scrap, title }) => (
-          <PostCard
-            key={id}
-            category={category}
-            content={content}
-            created_at={created_at}
-            heart={heart}
-            id={id}
-            isHeart={isHeart}
-            isScrap={isScrap}
-            nickname={nickname}
-            scrap={scrap}
-            title={title}
-            crew={type === 'crew' ? '크루명' : undefined}
-          />
-        ))}
+        {postData.length > 0
+          ? postData.map(({ id, category, content, created_at, heart, isHeart, isScrap, nickname, scrap, title, crew }) => (
+              <PostCard
+                key={id}
+                category={category}
+                content={content}
+                created_at={created_at}
+                heart={heart}
+                id={id}
+                isHeart={isHeart}
+                isScrap={isScrap}
+                nickname={nickname}
+                scrap={scrap}
+                title={title}
+                crew={type === 'crew' ? crew : undefined}
+              />
+            ))
+          : '게시글이 존재하지 않습니다.'}
       </div>
     </div>
   );

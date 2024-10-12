@@ -4,7 +4,7 @@ import { useState } from 'react';
 import ProgressBar from './_components/ProgressBar';
 import StepOne from './_components/StepOne';
 import StepTwo from './_components/StepTwo';
-import { FormProvider, useForm, useFormContext } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 
 export type StepType = 'account' | 'address';
 
@@ -30,8 +30,33 @@ function SignupPage() {
   const isOneAccept = email && password && nickname;
   const isTwoAccept = address && address_name;
 
-  const handleSignup = () => {
-    console.log(context.getValues());
+  const handleSignup = async () => {
+    const { email, password, nickname, address, address_name, address_detail, type } = context.getValues();
+    const body = {
+      username: email,
+      password,
+      nickname,
+      type,
+      zipcode: '',
+      streetAdr: address,
+      detailAdr: address_detail,
+      nameAdr: address_name,
+    };
+    try {
+      const res = await fetch('/api/join', {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (res.ok) {
+        window.alert(`${nickname}님 가입을 환영해요!`);
+        window.location.href = '/login/email';
+      } else throw Error();
+    } catch {
+      window.alert('잠시 후 다시 시도해 주세요.');
+    }
   };
 
   return (

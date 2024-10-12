@@ -27,8 +27,8 @@ function CrewPage() {
       </div>
       <div className="grid grid-cols-2 gap-2">
         <CrewCard crewId={1} crewName="한강 야간 러닝크루" type="운동/스포츠" address="서울시 마포구" crewNum={6} limit={20} />
-        <CrewCard crewId={1} crewName="한강 야간 러닝크루" type="운동/스포츠" address="서울시 마포구" crewNum={6} limit={20} />
-        <CrewCard crewId={1} crewName="한강 야간 러닝크루" type="운동/스포츠" address="서울시 마포구" crewNum={6} limit={20} />
+        <CrewCard crewId={2} crewName="독서실 스터디" type="스터디" address="스테이하우스 3호점" crewNum={6} limit={8} />
+        {/* <CrewCard crewId={1} crewName="한강 야간 러닝크루" type="운동/스포츠" address="서울시 마포구" crewNum={6} limit={20} /> */}
       </div>
     </>
   );
