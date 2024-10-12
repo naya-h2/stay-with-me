@@ -7,6 +7,7 @@ const HEADER_LIST = [
   { title: '납부', backlink: '/' },
   { title: '마이 홈', backlink: '/' },
   { title: '글 상세보기', backlink: '/community/board' },
+  { title: '모임 상세보기', backlink: '/community/crew' },
 ];
 
 function TitleHeader() {
@@ -16,6 +17,7 @@ function TitleHeader() {
     if (path.startsWith('/bill')) return 0;
     if (path.startsWith('/myhome')) return 1;
     if (path.startsWith('/post')) return 2;
+    if (path.startsWith('/community/crew')) return 3;
     return 0;
   };
 

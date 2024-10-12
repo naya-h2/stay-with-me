@@ -3,6 +3,7 @@ import AddrIcon from '~/icon/crew-explore.svg';
 import PersonIcon from '~/icon/crew-group.svg';
 
 interface Props {
+  crewId: number;
   crewName: string;
   type: string;
   address: string;
@@ -11,7 +12,7 @@ interface Props {
   isMyCrew?: boolean;
 }
 
-function CrewCard({ crewName, type, address, crewNum, limit, isMyCrew = false }: Props) {
+function CrewCard({ crewId, crewName, type, address, crewNum, limit, isMyCrew = false }: Props) {
   const INFO_LIST = [
     { id: 'type', icon: <TypeIcon />, data: type },
     { id: 'address', icon: <AddrIcon />, data: address },
@@ -29,7 +30,12 @@ function CrewCard({ crewName, type, address, crewNum, limit, isMyCrew = false }:
           </div>
         ))}
       </div>
-      <button className="primary-button h-[30px] rounded-[4px]">{isMyCrew ? '바로가기' : '가입'}</button>
+      <button
+        onClick={() => (window.location.href = isMyCrew ? `/community/crew/${crewId}` : `/community/crew/${crewId}/join`)}
+        className="primary-button h-[30px] rounded-[4px]"
+      >
+        {isMyCrew ? '바로가기' : '가입'}
+      </button>
     </div>
   );
 }
