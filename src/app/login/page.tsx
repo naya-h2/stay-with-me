@@ -11,10 +11,12 @@ function LoginPage() {
       </div>
       <div className="flex flex-col gap-6">
         <button>
-          <div className="flex gap-5 items-center">
-            <MailIcon />
-            이메일로 로그인
-          </div>
+          <Link href={`/login/email`}>
+            <div className="flex gap-5 items-center">
+              <MailIcon />
+              이메일로 로그인
+            </div>
+          </Link>
         </button>
         <div className="text-Labels-Secondary text-[13px] flex justify-between items-center">
           <HrIcon />

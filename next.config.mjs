@@ -8,6 +8,14 @@ const nextConfig = {
 
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: `http://${process.env.NEXT_PUBLIC_BASE_URL}/:path*`,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
