@@ -19,7 +19,7 @@ function PostListLayout({ title, addLink, type, postData }: Props) {
       </div>
       <div className="flex flex-col gap-3">
         {postData.length > 0
-          ? postData.map(({ id, category, content, created_at, heart, isHeart, isScrap, nickname, scrap, title, crew }) => (
+          ? postData.map(({ id, category, content, created_at, heart, isHeart, isScrap, nickname, scrap, title, crew }: any) => (
               <PostCard
                 key={id}
                 category={category}

@@ -5,7 +5,7 @@ import { useState } from 'react';
 interface Props {
   defaultValue: string;
   tabList: string[];
-  style: string;
+  style?: string;
   onClickTab?: (btnType: string) => void;
 }
 
