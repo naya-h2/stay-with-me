@@ -1,27 +1,135 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f6f8;
+  --background-secondary: #f2f2f7;
+  --main-mint: #00c7be;
+  --logo-green: #1b7156;
+  --Labels-Secondary: rgba(60, 60, 67, 0.6);
+  --Line-Normal-Normal: rgba(112, 115, 124, 0.22);
+  --main-gray: #7a7a7a;
+  --main-red: #ff3b30;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: white;
+  font-family: 'Pretendard Variable', 'Pretendard', '-apple-system', BlinkMacSystemFont, system-ui, sans-serif;
 }
 
 body {
-  color: var(--foreground);
+  position: relative;
+  padding: 0 24px;
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: 0 auto;
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  button {
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+
+    background-color: white;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 136.4%; /* 30.008px */
+    letter-spacing: -0.427px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 140%; /* 28px */
+    letter-spacing: -0.24px;
+  }
+
+  input {
+    width: 100%;
+    height: 48px;
+
+    border-radius: 8px;
+    padding: 12px 24px;
+
+    border: 1px solid var(--Line-Normal-Normal);
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 157.1%; /* 21.994px */
+    letter-spacing: 0.203px;
+
+    &:focus {
+      outline: 1px solid var(--main-mint);
+    }
+
+    &::placeholder {
+      color: var(--Labels-Secondary);
+    }
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .primary-button {
+    font-weight: 600;
+    color: white;
+    background-color: var(--main-mint);
+  }
+
+  .scroll-hidden {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .myhome_card_box {
+    width: 288px;
+    height: 200px;
+    border-radius: 16px;
+    border: 1px solid var(--Line-Normal-Normal);
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .fixed_center {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .tab_default {
+    background: none;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0%;
+    color: var(--main-gray);
+    text-wrap: nowrap;
+  }
+
+  .mint_btn {
+    padding: 6px 14px;
+    border-radius: 80px;
+    background: var(--main-mint);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
   }
 }
