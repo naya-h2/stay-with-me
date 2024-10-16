@@ -6,3 +6,23 @@ export const CATEGORY = {
 };
 
 export type CategoryType = 'SHARING' | 'QUESTION' | 'TIP' | 'FREE';
+
+export type CommentType = {
+  id: number;
+  created_At: string;
+  content: string;
+  host: string;
+  heart: number;
+};
+
+export type PostType = {
+  id: number;
+  created_At: string;
+  category: CategoryType;
+  host: string;
+  title: string;
+  content: string;
+  heart: number;
+  save: number;
+  commentList: CommentType[];
+};

@@ -1,7 +1,7 @@
 'use client';
 import BottomChat from '@/components/BottomChat';
 import HeaderLayout from '@/components/Layout/HeaderLayout';
-import { CATEGORY, CategoryType } from '@/const/category';
+import { CATEGORY, PostType } from '@/const/category';
 import { getData } from '@/util/getData';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
@@ -9,7 +9,7 @@ import ScrapIcon from '~/icon/post-bookmark.svg';
 import HeartIcon from '~/icon/post-favorite.svg';
 
 function PostPage({ params: { id } }: { params: { id: string } }) {
-  const [data, setData] = useState<any[] | null>(null);
+  const [data, setData] = useState<PostType | null>(null);
 
   const fetchData = async () => {
     const res = await getData(`/api/communication/${id}`);
@@ -24,7 +24,7 @@ function PostPage({ params: { id } }: { params: { id: string } }) {
     <HeaderLayout>
       {data && (
         <>
-          <p className="text-14 text-main-mint font-medium mt-8">{CATEGORY[data.category as CategoryType]}</p>
+          <p className="text-14 text-main-mint font-medium mt-8">{CATEGORY[data.category]}</p>
           <div className="flex justify-between">
             <h2 className="font-semibold">{data.title}</h2>
 
