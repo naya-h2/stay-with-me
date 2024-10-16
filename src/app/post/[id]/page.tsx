@@ -69,8 +69,6 @@ function PostPage({ params: { id } }: { params: { id: string } }) {
     fetchData();
   }, []);
 
-  console.log(data);
-
   return (
     <HeaderLayout>
       {data && (
@@ -118,7 +116,7 @@ function PostPage({ params: { id } }: { params: { id: string } }) {
           </div>
         </>
       )}
-      <BottomChat />
+      <BottomChat postId={id} />
       <div className="mt-[136px]" />
     </HeaderLayout>
   );
