@@ -1,7 +1,7 @@
 'use client';
 
 import PostCard from '@/components/Card/PostCard';
-import { CATEGORY } from '@/const/category';
+import { CATEGORY, CategoryType } from '@/const/category';
 import { getData } from '@/util/getData';
 import { useEffect, useState } from 'react';
 const CATEGORY_LIST = ['전체', '질문', '꿀팁', '나눔', '자유게시판'];
@@ -41,7 +41,7 @@ const CATEGORY_LIST = ['전체', '질문', '꿀팁', '나눔', '자유게시판'
 
 function BoardPage() {
   const [selected, setSelected] = useState('전체');
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<any[] | null>(null);
 
   const fetchData = async () => {
     const res = await getData(`/api/communication`);
@@ -68,10 +68,10 @@ function BoardPage() {
 
       <div>
         {data
-          ? data.map(({ category, content, heart, host, id, save, title }) => (
+          ? (data as any[]).map(({ category, content, heart, host, id, save, title }) => (
               <PostCard
                 key={id}
-                category={CATEGORY[category]}
+                category={CATEGORY[category as CategoryType]}
                 content={content}
                 created_at="2분 전"
                 heart={heart}

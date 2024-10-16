@@ -1,58 +1,15 @@
 'use client';
 import BottomChat from '@/components/BottomChat';
 import HeaderLayout from '@/components/Layout/HeaderLayout';
-import { CATEGORY } from '@/const/category';
+import { CATEGORY, CategoryType } from '@/const/category';
 import { getData } from '@/util/getData';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import ScrapIcon from '~/icon/post-bookmark.svg';
 import HeartIcon from '~/icon/post-favorite.svg';
 
-// const DATA = {
-//   id: 1,
-//   created_At: '2024-10-11T15:26:41.997Z',
-//   category: 'question',
-//   host: 'nickname',
-//   title: '절약 팁 알려주세요!',
-//   content:
-//     '안녕하세요, 201호 새 입주민입니다. 이번 달 전기요금 고지서를 받고 깜짝 놀랐어요. 지난달보다 3배나 더 나왔네요... \n\n전기 절약을 위한 팁이 있을까요?\n다들 어떻게 관리하시는지 궁금해요.',
-//   heart: 0,
-//   save: 0,
-//   commentList: [
-//     {
-//       id: 0,
-//       created_At: '2024-10-11T15:26:41.997Z',
-//       content: '안녕하세요 제가 좀 알려드려요?',
-//       host: '집주인',
-//       heart: 15,
-//     },
-//     {
-//       id: 1,
-//       created_At: '2024-10-11T15:26:41.997Z',
-//       content: '안녕하세요',
-//       host: '집주인',
-//       heart: 15,
-//     },
-//     {
-//       id: 2,
-//       created_At: '2024-10-11T15:26:41.997Z',
-//       content: '안녕하세요',
-//       host: '집주인',
-//       heart: 15,
-//     },
-//     {
-//       id: 3,
-//       created_At: '2024-10-11T15:26:41.997Z',
-//       content: '안녕하세요',
-//       host: '집주인',
-//       heart: 15,
-//     },
-//   ],
-// };
-
 function PostPage({ params: { id } }: { params: { id: string } }) {
-  const [data, setData] = useState(null);
-  // const { category, commentList, content, created_At, heart, host, save, title } = getData(`/communication/${id}`);
+  const [data, setData] = useState<any[] | null>(null);
 
   const fetchData = async () => {
     const res = await getData(`/api/communication/${id}`);
@@ -67,7 +24,7 @@ function PostPage({ params: { id } }: { params: { id: string } }) {
     <HeaderLayout>
       {data && (
         <>
-          <p className="text-14 text-main-mint font-medium mt-8">{CATEGORY[data.category]}</p>
+          <p className="text-14 text-main-mint font-medium mt-8">{CATEGORY[data.category as CategoryType]}</p>
           <div className="flex justify-between">
             <h2 className="font-semibold">{data.title}</h2>
 

@@ -4,3 +4,5 @@ export const CATEGORY = {
   TIP: '꿀팁',
   FREE: '자유게시판',
 };
+
+export type CategoryType = 'SHARING' | 'QUESTION' | 'TIP' | 'FREE';
