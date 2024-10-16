@@ -5,6 +5,7 @@ export const getData = async (path: string) => {
         Authorization: window.localStorage.getItem('f-authToken') ?? '',
       },
     });
+    console.log(data);
     if (data.ok) {
       return await data.json();
     }
@@ -16,6 +17,7 @@ export const getData = async (path: string) => {
       });
 
       localStorage.setItem('f-authToken', res.headers.get('Authorization') ?? '');
+      if (!res.ok) window.location.href = '/login';
     }
 
     const reData = await fetch(`/api${path}`, {
@@ -26,7 +28,5 @@ export const getData = async (path: string) => {
 
     if (!reData.ok) throw Error();
     else return await reData.json();
-  } catch {
-    window.alert('재로그인 해 주세요.');
-  }
+  } catch {}
 };

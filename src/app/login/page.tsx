@@ -1,8 +1,13 @@
+'use client';
 import MailIcon from '~/icon/mail.svg';
 import HrIcon from '~/icon/horizonLine.svg';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 function LoginPage() {
+  useEffect(() => {
+    localStorage.removeItem('f-authToken');
+  }, []);
   return (
     <div className="px-7 h-full py-[120px]">
       <div className="text-center mb-[142px]">
