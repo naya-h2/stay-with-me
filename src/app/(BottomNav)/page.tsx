@@ -6,6 +6,7 @@ import LogoIcon from '~/icon/logo.svg';
 import NotifyIcon from '~/icon/notifications_unread.svg';
 import AddIcon from '~/icon/myhome-add_circle.svg';
 import PostListLayout from '@/components/Layout/PostListLayout';
+import { useEffect, useState } from 'react';
 const POST_DATA = [
   {
     id: 1,
@@ -68,27 +69,40 @@ const MYHOME_DATA = [
 ];
 
 export default function HomePage() {
+  const [isLogin, setIsLogin] = useState(false);
+  useEffect(() => {
+    if (localStorage.getItem('f-authToken')) {
+      setIsLogin(true);
+    } else {
+      window.location.href = '/login';
+    }
+  }, []);
+
   return (
     <>
-      <header className="pt-2 h-11 w-full flex justify-center relative">
-        <LogoIcon />
-        <Link href={`/mypage`}>
-          <NotifyIcon className="absolute top-2 right-0" />
-        </Link>
-      </header>
-      <main className="flex flex-col gap-10 mt-5">
-        <div className="flex flex-nowrap gap-4 overflow-x-scroll scroll-hidden">
-          {MYHOME_DATA.map(({ id, nickname, address }) => (
-            <HomeCard key={id} id={id} nickname={nickname} address={address} />
-          ))}
-          <div className="myhome_card_box flex justify-center items-center flex-shrink-0">
-            <AddIcon />
-          </div>
-        </div>
+      {isLogin && (
+        <>
+          <header className="pt-2 h-11 w-full flex justify-center relative">
+            <LogoIcon />
+            <Link href={`/mypage`}>
+              <NotifyIcon className="absolute top-2 right-0" />
+            </Link>
+          </header>
+          <main className="flex flex-col gap-10 mt-5">
+            <div className="flex flex-nowrap gap-4 overflow-x-scroll scroll-hidden">
+              {MYHOME_DATA.map(({ id, nickname, address }) => (
+                <HomeCard key={id} id={id} nickname={nickname} address={address} />
+              ))}
+              <div className="myhome_card_box flex justify-center items-center flex-shrink-0">
+                <AddIcon />
+              </div>
+            </div>
 
-        <PostListLayout type="board" addLink="/community/board" postData={POST_DATA} title="최신 소통 글" />
-        <PostListLayout type="crew" addLink="/community/crew" postData={CREW_DATA} title="최신 모임 글" />
-      </main>
+            <PostListLayout type="board" addLink="/community/board" postData={POST_DATA} title="최신 소통 글" />
+            <PostListLayout type="crew" addLink="/community/crew" postData={CREW_DATA} title="최신 모임 글" />
+          </main>
+        </>
+      )}
     </>
   );
 }
