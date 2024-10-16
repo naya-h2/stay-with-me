@@ -49,7 +49,7 @@ import HeartIcon from '~/icon/post-favorite.svg';
 //   ],
 // };
 
-const CATEGORY = {
+export const CATEGORY = {
   SHARING: '나눔',
   QUESTION: '질문',
   TIP: '꿀팁',

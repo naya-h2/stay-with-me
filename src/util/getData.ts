@@ -5,7 +5,6 @@ export const getData = async (path: string) => {
         Authorization: window.localStorage.getItem('f-authToken') ?? '',
       },
     });
-    console.log(data);
     if (data.ok) {
       return await data.json();
     }

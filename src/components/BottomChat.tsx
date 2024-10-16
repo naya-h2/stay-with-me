@@ -29,7 +29,13 @@ function BottomChat({ postId }: Props) {
       if (res.ok) {
         window.alert(`댓글 작성이 완료되었습니다.`);
         window.location.reload();
-      } else throw Error('에러');
+      } else {
+        if (400 <= res.status && res.status < 500) {
+          window.alert('로그인이 필요한 기능입니다.');
+          window.location.href = '/login';
+        }
+        throw Error('에러');
+      }
     } catch {
       window.alert(`댓글 작성에 실패하였습니다.`);
     }
