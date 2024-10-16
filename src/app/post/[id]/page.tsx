@@ -1,6 +1,7 @@
 'use client';
 import BottomChat from '@/components/BottomChat';
 import HeaderLayout from '@/components/Layout/HeaderLayout';
+import { CATEGORY } from '@/const/category';
 import { getData } from '@/util/getData';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
@@ -48,13 +49,6 @@ import HeartIcon from '~/icon/post-favorite.svg';
 //     },
 //   ],
 // };
-
-export const CATEGORY = {
-  SHARING: '나눔',
-  QUESTION: '질문',
-  TIP: '꿀팁',
-  FREE: '자유게시판',
-};
 
 function PostPage({ params: { id } }: { params: { id: string } }) {
   const [data, setData] = useState(null);

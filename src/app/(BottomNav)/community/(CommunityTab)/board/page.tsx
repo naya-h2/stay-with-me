@@ -1,6 +1,7 @@
 'use client';
-import { CATEGORY } from '@/app/post/[id]/page';
+
 import PostCard from '@/components/Card/PostCard';
+import { CATEGORY } from '@/const/category';
 import { getData } from '@/util/getData';
 import { useEffect, useState } from 'react';
 const CATEGORY_LIST = ['전체', '질문', '꿀팁', '나눔', '자유게시판'];
