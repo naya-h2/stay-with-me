@@ -1,6 +1,6 @@
 export const getData = async (path: string) => {
   try {
-    const data = await fetch(`/api${path}`, {
+    const data = await fetch(`/proxy${path}`, {
       headers: {
         Authorization: window.localStorage.getItem('f-authToken') ?? '',
       },

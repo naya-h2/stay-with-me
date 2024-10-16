@@ -18,7 +18,7 @@ function BottomChat({ postId }: Props) {
       postId: Number(postId),
     };
     try {
-      const res = await fetch('/api/api/comment', {
+      const res = await fetch('/proxy/api/comment', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {

@@ -26,7 +26,7 @@ function EmailLoginPage() {
       password,
     };
     try {
-      const res = await fetch('/api/login', {
+      const res = await fetch('/proxy/login', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {

@@ -43,7 +43,7 @@ function SignupPage() {
       nameAdr: address_name,
     };
     try {
-      const res = await fetch('/api/join', {
+      const res = await fetch('/proxy/join', {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
